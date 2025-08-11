@@ -60,9 +60,11 @@ const StudentManager = () => {
       fetchAllStudents();
       resetForm();
     } catch (error) {
+      console.error(error.response?.data || error.message);
       setMessage('Error adding student.');
     }
   };
+
 
   const updateStudent = async () => {
     if (!validateForm()) return;
@@ -122,11 +124,11 @@ const StudentManager = () => {
   return (
     <div className="student-container">
 
-{message && (
-  <div className={`message-banner ${message.toLowerCase().includes('error') ? 'error' : 'success'}`}>
-    {message}
-  </div>
-)}
+      {message && (
+        <div className={`message-banner ${message.toLowerCase().includes('error') ? 'error' : 'success'}`}>
+          {message}
+        </div>
+      )}
 
 
       <h2>Student Management</h2>

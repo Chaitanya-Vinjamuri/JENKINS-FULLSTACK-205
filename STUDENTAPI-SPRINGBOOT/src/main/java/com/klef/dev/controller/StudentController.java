@@ -11,6 +11,7 @@ import com.klef.dev.entity.Student;
 import com.klef.dev.service.StudentService;
 import org.springframework.web.bind.annotation.GetMapping;
 
+
 @RestController
 @RequestMapping("/studentapi/")
 @CrossOrigin(origins = "*")
